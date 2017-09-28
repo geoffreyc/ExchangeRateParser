@@ -45,7 +45,7 @@ public class XeParser {
         // Cast result to Double
         Double rate = Double.parseDouble(resultstr);
 
-        return new ExchangeResult(from, to, rate);
+        return new ExchangeResult(from, to, rate, "GOOGLE");
 
     }
 
@@ -55,7 +55,7 @@ public class XeParser {
         String resultstr = "";
         Document doc = null;
         try {
-            // Fetch DOM from google (Emulating browser request through user agent string)
+            // Fetch DOM (Emulating browser request through user agent string)
             doc = Jsoup
                     .connect(request)
                     .userAgent(
@@ -81,7 +81,7 @@ public class XeParser {
         // Cast result to Double
         Double rate = Double.parseDouble(resultstr);
 
-        return new ExchangeResult(from, to, rate);
+        return new ExchangeResult(from, to, rate, "XE");
 
     }
 
