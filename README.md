@@ -1,8 +1,8 @@
-Google Exchange Rate Parser
+Exchange Rate Parser
 ===================
 
 
-This repository is a small showcase app using JAVA/Spring to create a small REST API interface. It uses [Jsoup](https://github.com/jhy/jsoup) to scrape google's result page (note: This is potentially against google's terms of service)
+This repository is a small showcase app using JAVA/Spring to create a small REST API interface. It uses [Jsoup](https://github.com/jhy/jsoup) to scrape XE.com (google's result page as a fall back) (note: This is potentially against their terms of service)
 
 ----------
 

@@ -19,11 +19,18 @@ public class ExchangeController {
         ExchangeResult result = null;
         try {
             // Fetch rate from source (google)
-            result = parser.getRate(from, to);
+            result = parser.getRateXeCom(from, to);
         } catch (Exception e) {
-            // Populate error message in case of failure
-            e.printStackTrace();
-            result = new ExchangeResult(from, to, 0.00, true, e.getMessage());
+            //Fallback to google
+            try {
+                result = parser.getRate(from, to);
+            } catch (Exception e1) {
+                e.printStackTrace();
+                // Populate error message in case of failure
+                result = new ExchangeResult(from, to, 0.00, true, e.getMessage());
+            }
+
+
         }
 
         // Return rate as JSON string
